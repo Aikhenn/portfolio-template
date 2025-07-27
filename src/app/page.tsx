@@ -2,60 +2,25 @@
 
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button"
-
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { start } from "repl";
 
 
 
 export default function Home() {
 
-  
-const pathname = usePathname();
 
-const navLinks = [
-  { label: "Home", href: "/dod" },
-  { label: "Profile", href: "/docs" },
-  { label: "Games", href: "/game" },
-  { label: "Tracker", href: "/game" },
-];
 
   return (
-    <div className="border-2 border-amber-50 font-sans bg-[#201B1F] text-white grid grid-rows-[20px_1fr_20px] items-start justify-items-center min-h-screen p-8 pb-20 gap-16 ">
-      <header className="">
-         <NavigationMenu>
-      <NavigationMenuList className="gap-6">
-        {navLinks.map(({ label, href }) => {
-          const isActive = pathname === href;
-
-          return (
-            <NavigationMenuItem key={href}>
-              <Link href={href} legacyBehavior passHref>
-                <NavigationMenuLink
-                  className="relative px-2 py-1 text-white group"
-                  active={isActive}
-                >
-                  <span className="relative z-10">{label}</span>
-                
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          );
-        })}
-      </NavigationMenuList>
-    </NavigationMenu>
-      </header>
+    <div className="flex flex-col ">
+   
       <main className="flex flex-col gap-[24px] row-start-2 items-center sm:items-start  min-w-full">
 
         <section   className="flex justify-around h-[500px] items-center gap-[32px] min-w-full px-40">
@@ -84,54 +49,50 @@ const navLinks = [
           <h2 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
             Games Played
           </h2>
-          <div className="flex gap-[128px] justify-around">
-            <div className="flex flex-col items-center gap-4">
-              <Image
-                aria-hidden
-                src="/Valorant.png"
-                alt="Valorant"
-                width={250}
-                height={280}
-               className="h-[270px]"
-              />
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
-              Valorant
-              </h5>
-            </div>
-           <div className="flex flex-col items-center gap-4">
-              <Image
-                aria-hidden
-                src="/CS.png"
-                alt="Counter Strike"
-                width={250}
-                height={250}
-               
-              />
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
-              Counter Strike
-              </h5>
-            </div>
 
-              <div className="flex flex-col items-center gap-4">
-              <Image
-                aria-hidden
-                src="/Roblox.png"
-                alt="Roblox"
-                width={250}
-                height={200}
-               
-              />
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
-               Roblox
-              </h5>
-            </div>
+          <Carousel opts={{loop:true, align:"start"}}>
+            <CarouselContent className="-ml-4">
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3 pl-4">
+                <Image
+                  aria-hidden
+                  src="/Valorant.png"
+                  alt="Valorant"
+                  width={250}
+                  height={280}
+                className="h-[270px]"
+                />
+                
+                </CarouselItem>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3  pl-4">  
+                <Image
+                  aria-hidden
+                  src="/CS.png"
+                  alt="Counter Strike"
+                  width={250}
+                  height={250}
+                
+                /></CarouselItem>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3  pl-4">     
+                <Image
+                  aria-hidden
+                  src="/Roblox.png"
+                  alt="Roblox"
+                  width={250}
+                  height={200} 
+                />
+              </CarouselItem>
+            </CarouselContent>
 
-          </div>
+            <CarouselPrevious />
+            <CarouselNext />
+
+          </Carousel>
+         
         </section>
 
         <section className=" flex flex-col items-center justify-center gap-7 w-full m-2">
           <h2 className="scroll-m-20 text-left text-2xl font-extrabold text-balance ">
-            Achievements
+            ACHIEVEMENTS
           </h2>
           <div className="bg-[#952D3C]/10 p-5 flex w-6xl justify-between items-center rounded-3xl">
 
@@ -191,6 +152,63 @@ const navLinks = [
           </div>
         </section>
 
+        <section className="h-full p-5 min-w-full">
+            <h2 className="scroll-m-20 text-center text-2xl font-extrabold text-balance mb-10">
+            COMMUNITIES
+          </h2>
+
+          <div className=" max-w-7xl mx-auto w-full grid grid-cols-6 px-2">
+             <div className="col-span-3 w-full h-full py-20">
+              <h1 className="font-bold">HIVE ESPORTS</h1>
+                <p className="text-gray-100  text-32">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt corporis consequuntur voluptate nulla iusto quam ut quasi, eaque quas omnis vero totam ullam, reprehenderit ratione pariatur accusamus suscipit odit nostrum?</p>
+
+             </div>
+            {/* Vertical Line */}
+              <div className="relative w-full h-full flex justify-center items-center">
+                <div className="h-full w-2 bg-[#952D3C]"></div>
+               <div className="absolute w-20 px-2 h-20 rounded-full bg-[#952D3C] z-10 ">
+                
+                  <h5 className="text-2xl font-bold text-white text-center mt-5">2025</h5>
+                </div>
+              </div>
+               <div className="col-span-2 p-4">
+                <Image
+                aria-hidden
+                src="/Roblox.png"
+                alt="Roblox"
+                width={250}
+                height={100}
+               
+              />
+            </div>
+          </div>
+       <div className=" max-w-7xl mx-auto w-full grid grid-cols-6 px-2">
+             <div className="col-span-3 w-full h-full py-20">
+              <h1 className="font-bold">HIVE ESPORTS</h1>
+                <p className="text-gray-100  text-32">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt corporis consequuntur voluptate nulla iusto quam ut quasi, eaque quas omnis vero totam ullam, reprehenderit ratione pariatur accusamus suscipit odit nostrum?</p>
+
+             </div>
+            {/* Vertical Line */}
+              <div className="relative w-full h-full flex justify-center items-center">
+                <div className="h-full w-2 bg-[#952D3C]"></div>
+               <div className="absolute w-20 px-2 h-20 rounded-full bg-[#952D3C] z-10 ">
+                
+                  <h5 className="text-2xl font-bold text-white text-center mt-5">2025</h5>
+                </div>
+              </div>
+               <div className="col-span-2 p-4">
+                <Image
+                aria-hidden
+                src="/Roblox.png"
+                alt="Roblox"
+                width={250}
+                height={100}
+               
+              />
+            </div>
+          </div>
+        </section>
+
         <section className="w-full flex flex-col items-center">
            <h2 className="scroll-m-20 text-center text-2xl font-extrabold text-balance ">
              Want to play with me or contact me?
@@ -202,59 +220,10 @@ const navLinks = [
 
         </section>
 
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-     
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/fb-icon.svg"
-            alt="facebook icon"
-            width={20}
-            height={20}
-            className="w-4 h-4 invert sepia saturate-100 hue-rotate-[180deg]"
+        
 
-          />
-          Facebook
-        </a>
-           <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/ig-icon.svg"
-            alt="Instagram icon"
-            width={20}
-            height={20}
-            className="w-4 h-4 invert sepia saturate-100 hue-rotate-[180deg]"
-          />
-          Instagram
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/tiktok-icon.svg"
-            alt="tiktok icon"
-             width={20}
-            height={20}
-            className="w-4 h-4 invert sepia saturate-100 hue-rotate-[180deg]"
-          />
-          Tiktok
-        </a>
-      </footer>
+      </main>
+    
     </div>
   );
 }
