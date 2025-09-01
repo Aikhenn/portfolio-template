@@ -12,8 +12,7 @@ import {
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Profile', href: '/profile' },
-  { label: 'Games', href: '/games' },
-  { label: 'Tracker', href: '/tracker' },
+
 
 ];
 
