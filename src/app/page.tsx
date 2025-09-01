@@ -435,28 +435,28 @@ export default function Home() {
                   <div className="flex gap-4">
                     <Image
                       aria-hidden
-                      src="sage_icon.png"
+                      src="/sage_icon.png"
                       alt="Roblox"
                       width={90}
                       height={90}
                     />
                     <Image
                       aria-hidden
-                      src="viper_icon.png"
+                      src="/viper_icon.png"
                       alt="Roblox"
                       width={100}
                       height={100}
                     />
                     <Image
                       aria-hidden
-                      src="omen_icon.png"
+                      src="/omen_icon.png"
                       alt="Roblox"
                       width={100}
                       height={100}
                     />
                       <Image
                       aria-hidden
-                      src="cypher_icon.png"
+                      src="/cypher_icon.png"
                       alt="Roblox"
                       width={100}
                       height={100}
