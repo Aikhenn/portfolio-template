@@ -10,8 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import FadeInSection from "@/lib/intersectionObserver";
+import { useState } from "react";
 
 export default function Home() {
+  const [expanded, setExpanded] = useState(false);
+
+
   return (
     <div className="flex flex-col ">
       <main className="flex flex-col gap-[24px] row-start-2 items-center sm:items-start  min-w-full">
@@ -180,7 +184,14 @@ export default function Home() {
           </FadeInSection>
         </section>
 
+
         <section className="h-full p-5 min-w-full">
+              {/* Wrapper with max height when collapsed */}
+      <div
+        className={`transition-all duration-500 overflow-hidden ${
+          expanded ? "max-h-[5000px]" : "max-h-[600px]"
+        }`}
+      >
           <FadeInSection>
             <h2 className="scroll-m-20 text-center text-2xl font-extrabold text-balance mb-10  animate-appear">
               ORGANIZATION & COMMUNITIES
@@ -374,7 +385,30 @@ export default function Home() {
               </div>
             </div>
           </FadeInSection>
+
+          
+        {/* Fade overlay (only when collapsed) */}
+        {!expanded && (
+          <div className="absolute bottom-[-1250px] left-0 w-full h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
+          
+        )}
+          </div>
+
+
+          
+      <FadeInSection>
+           {/* Toggle button */}
+      <div className="text-center mt-6">
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="px-4 py-2 bg-[#952D3C] text-white rounded-lg hover:bg-[#7a222f] transition"
+        >
+          {expanded ? "See Less" : "See More"}
+        </button>
+      </div>
+      </FadeInSection>
         </section>
+
 
         <section className="h-full p-5 min-w-full mt-20">
           <FadeInSection>
@@ -435,28 +469,28 @@ export default function Home() {
                   <div className="flex gap-4">
                     <Image
                       aria-hidden
-                      src="/sage_icon.png"
-                      alt="Roblox"
-                      width={90}
-                      height={90}
-                    />
-                    <Image
-                      aria-hidden
-                      src="/viper_icon.png"
+                      src="/Sage_icon.png"
                       alt="Roblox"
                       width={100}
                       height={100}
                     />
                     <Image
                       aria-hidden
-                      src="/omen_icon.png"
+                      src="/Viper_icon.png"
+                      alt="Roblox"
+                      width={100}
+                      height={100}
+                    />
+                    <Image
+                      aria-hidden
+                      src="/Omen_icon.png"
                       alt="Roblox"
                       width={100}
                       height={100}
                     />
                       <Image
                       aria-hidden
-                      src="/cypher_icon.png"
+                      src="/Cypher_icon.png"
                       alt="Roblox"
                       width={100}
                       height={100}

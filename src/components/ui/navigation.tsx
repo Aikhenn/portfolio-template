@@ -12,6 +12,7 @@ import {
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'Profile', href: '/profile' },
+  { label: 'Contact', href: '/contact' },
 
 
 ];
@@ -29,7 +30,7 @@ export default function Navigation() {
             <NavigationMenuItem key={href}>
               <Link href={href} legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={`relative px-2 py-1 text-white group ${isActive ? 'underline' : ''}`}
+                  className={`relative px-2 py-1 text-white group`}
                 >
                   <span className="relative z-10">{label}</span>
                 </NavigationMenuLink>
