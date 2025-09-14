@@ -15,131 +15,137 @@ import { useState } from "react";
 export default function Home() {
   const [expanded, setExpanded] = useState(false);
 
-
   return (
-    <div className="flex flex-col ">
-      <main className="flex flex-col gap-[24px] row-start-2 items-center sm:items-start  min-w-full">
-        <section className="flex justify-around h-[500px] items-center gap-[32px] min-w-full px-40">
-          <div className="absolute mt-20 inset-0 bg-[url('/Banner.png')] h-[480px] bg-cover bg-center opacity-5 z-0" />
+    <div className="flex flex-col">
+      <main className="flex flex-col gap-6 md:gap-[24px] row-start-2 items-center sm:items-start min-w-full">
+        {/* Hero Section */}
+        <section className="flex flex-col md:flex-row justify-around md:h-[500px] items-center gap-6 md:gap-[32px] min-w-full px-4 md:px-40 py-10 md:py-0">
+          <div className="absolute mt-10 md:mt-20 inset-0 bg-[url('/Banner.png')] h-[300px] md:h-[480px] bg-cover bg-center opacity-5 z-0" />
 
           <FadeInSection>
-            <div className="text-left">
-              <h1 className="text-left scroll-m-20 text-8xl font-extrabold tracking-tight text-balance">
+            <div className="text-center md:text-left">
+              <h1 className="scroll-m-20 text-6xl md:text-8xl font-extrabold tracking-tight text-balance">
                 SELENE
               </h1>
-              <h2 className="scroll-m-20 pl-2 text-left text-2xl font-extrabold tracking-tight text-balance text-[#C53448]">
+              <h2 className="scroll-m-20 md:pl-2 text-center md:text-left text-xl md:text-2xl font-extrabold tracking-tight text-balance text-[#C53448]">
                 Player & Manager
               </h2>
-              <p className="scroll-m-20 pl-2 text-left text-2xl w-2xl font-light tracking- text-balance">
+              <p className="scroll-m-20 md:pl-2 text-center md:text-left text-lg md:text-2xl max-w-xl md:w-2xl font-light tracking- text-balance">
                 Professional E-sports player and experienced manager for Hive
                 E-sports.
               </p>
-              <Button
-                variant="default"
-                className="mt-4 ml-2 bg-[#C53448]/70 hover:bg-[#C53448]/40 hover:cursor-pointer"
-              >
-                View Profile
-              </Button>
+              <div className="flex justify-center md:justify-start">
+                <Button
+                  variant="default"
+                  className="mt-4 md:ml-2 bg-[#C53448]/70 hover:bg-[#C53448]/40 hover:cursor-pointer"
+                >
+                  View Profile
+                </Button>
+              </div>
             </div>
           </FadeInSection>
           <FadeInSection>
-
-          <div className="">
-         
-               </div>
-           </FadeInSection>
-
+            <div className="hidden md:block">
+              {/* Optional: Add an image here for desktop */}
+            </div>
+          </FadeInSection>
         </section>
 
-        <section className=" flex flex-col items-center justify-center gap-7 w-full m-2">
+        {/* Games Played Section */}
+        <section className="flex flex-col items-center justify-center gap-4 md:gap-7 w-full m-2 px-4">
           <FadeInSection>
-            <h2 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
+            <h2 className="scroll-m-20 text-center md:text-left text-xl md:text-2xl font-extrabold text-balance">
               Games Played
             </h2>
           </FadeInSection>
 
           <FadeInSection>
-            <Carousel opts={{ loop: true, align: "start" }}>
-              <CarouselContent className="-ml-4">
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3 pl-4">
-                  <div className="flex flex-col justify-center items-center gap-2">
-                    <Image
-                      aria-hidden
-                      src="/Valorant.png"
-                      alt="Valorant"
-                      width={250}
-                      height={280}
-                      className="h-[270px]"
-                    />
+            <div className="w-full max-w-md md:max-w-full">
+              <Carousel opts={{ loop: true, align: "start" }}>
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3 pl-2 md:pl-4">
+                    <div className="flex flex-col justify-center items-center gap-2">
+                      <Image
+                        aria-hidden
+                        src="/Valorant.png"
+                        alt="Valorant"
+                        width={200}
+                        height={220}
+                        className="h-[200px] object-contain"
+                      />
+                      <h1 className="font-bold text-lg md:text-2xl">Valorant</h1>
+                    </div>
+                  </CarouselItem>
 
-                    <h1 className="font-bold text-2xl">Valorant</h1>
-                  </div>
-                </CarouselItem>
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3 pl-2 md:pl-4">
+                    <div className="flex flex-col justify-center items-center gap-2">
+                      <Image
+                        aria-hidden
+                        src="/CS.png"
+                        alt="Counter Strike"
+                        width={200}
+                        height={160}
+                        className="h-[200px] object-contain"
+                      />
+                      <h1 className="font-bold text-lg md:text-2xl">Counter Strike</h1>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3 pl-2 md:pl-4">
+                    <div className="flex flex-col justify-center items-center gap-2">
+                      <Image
+                        aria-hidden
+                        src="/Roblox.png"
+                        alt="Roblox"
+                        width={200}
+                        height={160}
+                        className="h-[200px] object-contain"
+                      />
+                      <h1 className="font-bold text-lg md:text-2xl">Roblox</h1>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="md:basis-1/2 lg:basis-1/3 pl-2 md:pl-4">
+                    <div className="flex flex-col justify-center items-center gap-2">
+                      <Image
+                        aria-hidden
+                        src="/Farlight.png"
+                        alt="Farlight"
+                        width={200}
+                        height={160}
+                        className="h-[200px] object-contain"
+                      />
+                      <h1 className="font-bold text-lg md:text-2xl">Farlight</h1>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
 
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3  pl-4">
-                  <div className="flex flex-col justify-center items-center gap-2">
-                    <Image
-                      aria-hidden
-                      src="/CS.png"
-                      alt="Counter Strike"
-                      width={250}
-                      height={200}
-                    />
-                    <h1 className="font-bold text-2xl">Counter Strike</h1>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3  pl-4">
-                  <div className="flex flex-col justify-center items-center gap-2">
-                    <Image
-                      aria-hidden
-                      src="/Roblox.png"
-                      alt="Roblox"
-                      width={250}
-                      height={200}
-                    />
-                    <h1 className="font-bold text-2xl">Roblox</h1>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3  pl-4">
-                  <div className="flex flex-col justify-center items-center gap-2">
-                    <Image
-                      aria-hidden
-                      src="/Farlight.png"
-                      alt="Farlight"
-                      width={265}
-                      height={200}
-                    />
-                    <h1 className="font-bold text-2xl">Farlight</h1>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
+              </Carousel>
+            </div>
           </FadeInSection>
         </section>
 
-        <section className="flex flex-col items-center justify-center gap-7 w-full m-2">
+        {/* Achievements Section */}
+        <section className="flex flex-col items-center justify-center gap-4 md:gap-7 w-full m-2 px-4">
           <FadeInSection>
-            <h2 className="animate-appear scroll-m-20 text-left text-2xl font-extrabold text-balance ">
+            <h2 className="animate-appear scroll-m-20 text-center md:text-left text-xl md:text-2xl font-extrabold text-balance">
               ACHIEVEMENTS
             </h2>
           </FadeInSection>
 
           <FadeInSection>
-            <div className="bg-[#952D3C]/10 p-5 flex w-6xl justify-between items-center rounded-3xl animate-appear">
-              <div>
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
+            <div className="bg-[#952D3C]/10 p-4 md:p-5 flex flex-col md:flex-row  md:w-3xl lg:w-6xl justify-between items-center rounded-2xl md:rounded-3xl animate-appear">
+              <div className="text-center md:text-left mb-2 md:mb-0">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extrabold text-balance">
                   Valorant Champions Tour
                 </h5>
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance text-[#952D3C] ">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extrabold text-balance text-[#952D3C]">
                   Hive Esports
                 </h5>
               </div>
 
               <div>
-                <h5 className="scroll-m-20 text-left text-2xl font-extralight  text-balance ">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extralight text-balance">
                   2025
                 </h5>
               </div>
@@ -147,36 +153,37 @@ export default function Home() {
           </FadeInSection>
 
           <FadeInSection>
-            <div className="bg-[#952D3C]/10 p-5 flex w-6xl justify-between items-center rounded-3xl animate-appear">
-              <div>
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
+            <div className="bg-[#952D3C]/10 p-4 md:p-5 flex flex-col md:flex-row md:w-3xl lg:w-6xl justify-between items-center rounded-2xl md:rounded-3xl animate-appear">
+              <div className="text-center md:text-left mb-2 md:mb-0">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extrabold text-balance">
                   Valorant Champions Tour
                 </h5>
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance text-[#952D3C] ">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extrabold text-balance text-[#952D3C]">
                   Hive Esports
                 </h5>
               </div>
 
               <div>
-                <h5 className="scroll-m-20 text-left text-2xl font-extralight  text-balance ">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extralight text-balance">
                   2025
                 </h5>
               </div>
             </div>
           </FadeInSection>
+          
           <FadeInSection>
-            <div className="bg-[#952D3C]/10 p-5 flex w-6xl justify-between items-center rounded-3xl animate-appear">
-              <div>
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance ">
+            <div className="bg-[#952D3C]/10 p-4 md:p-5 flex flex-col md:flex-row  md:w-3xl lg:w-6xl justify-between items-center rounded-2xl md:rounded-3xl animate-appear">
+              <div className="text-center md:text-left mb-2 md:mb-0">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extrabold text-balance">
                   Valorant Champions Tour
                 </h5>
-                <h5 className="scroll-m-20 text-left text-2xl font-extrabold  text-balance text-[#952D3C] ">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extrabold text-balance text-[#952D3C]">
                   Hive Esports
                 </h5>
               </div>
 
               <div>
-                <h5 className="scroll-m-20 text-left text-2xl font-extralight  text-balance ">
+                <h5 className="scroll-m-20 text-lg md:text-2xl font-extralight text-balance">
                   2025
                 </h5>
               </div>
@@ -184,334 +191,185 @@ export default function Home() {
           </FadeInSection>
         </section>
 
-
-        <section className="h-full p-5 min-w-full">
-              {/* Wrapper with max height when collapsed */}
-      <div
-        className={`transition-all duration-500 overflow-hidden ${
-          expanded ? "max-h-[5000px]" : "max-h-[600px]"
-        }`}
-      >
+        {/* Teams/Experience Section */}
+        <section className="w-full flex flex-col items-center my-4 px-4">
           <FadeInSection>
-            <h2 className="scroll-m-20 text-center text-2xl font-extrabold text-balance mb-10  animate-appear">
-              ORGANIZATION & COMMUNITIES
-            </h2>
-          </FadeInSection>
-
-          <FadeInSection>
-            <div className=" max-w-7xl mx-auto w-full grid grid-cols-6 px-2  animate-appear">
-              <div className="col-span-3 w-full h-full py-20">
-                <h1 className="font-bold">UNREAL ESPORTS (Team Manager)</h1>
-                <p className="text-gray-100  text-32">
-                <ul className="list-disc list-inside">
-                  <li>Grew a passion for esports by starting as a casual player</li>
-                  <li>Able to develop an understanding for esports industry</li>
-                  <li>Developed management skills by handling 3 teams</li>
-                  <li>In-charge of player recruitment (conducted tryouts and interviews)</li>
-                  <li>Planned and hosted in-organization events</li>
-                  <li>Responsible for writing community announcements and formal letters for team meetings</li>
-                  <li>In-charge of searching for small tournaments</li>
-                </ul>
-                </p>
-              </div>
-              {/* Vertical Line */}
-              <div className="relative w-full h-full flex justify-center items-center  animate-appear">
-                <div className="h-full w-2 bg-[#952D3C]"></div>
-                <div className="absolute w-45 px-2 h-15 rounded-full bg-[#952D3C] z-10 ">
-                  <h5 className="text-sm font-bold text-white text-center mt-5">
-                     March 2021 - Nov 2021
-
-                  </h5>
-                </div>
-              </div>
-              <div className="col-span-2 p-4 ">
-                <Image
-                  aria-hidden
-                  src="/unreal.png"
-                  alt="Unreal"
-                  width={250}
-                  height={100}
-                />
-              </div>
-            </div>
-          </FadeInSection>
-          <FadeInSection>
-            <div className=" max-w-7xl mx-auto w-full grid grid-cols-6 px-2 animate-appear">
-              <div className="col-span-3 w-full h-full py-20">
-                <h1 className="font-bold">Venomous Pit Risker Community (Valorant Player / Project Manager)</h1>
-                <p className="text-gray-100  text-32">
-                <ul className="list-disc list-inside">
-                  <li>Became the captain of the community’s all girls Valorant team</li>
-                  <li>Played as the team’s sentinel and participated in scrimmages</li>
-                  <li>Planned and proposed funded projects for the community</li>
-                  <li>In-charge for new member screening </li>
-                  <li>Provided weekly community reports</li>
-                  <li>Collaborated with Agastopia for community partnership and advertisement</li>
-                </ul>
-                </p>
-              </div>
-              {/* Vertical Line */}
-              <div className="relative w-full h-full flex justify-center items-center">
-                <div className="h-full w-2 bg-[#952D3C]"></div>
-                <div className="absolute w-45 px-2 h-15 rounded-full bg-[#952D3C] z-10 ">
-                  <h5 className="text-sm font-bold text-white text-center mt-5">
-                   Nov 2022 - Jan 2023 
-                  </h5>
-                </div>
-              </div>
-              <div className="col-span-2 p-4">
-                <Image
-                  aria-hidden
-                  src="/vpr_logo.png"
-                  alt="vpr"
-                  width={250}
-                  height={100}
-                />
-              </div>
-            </div>
-          </FadeInSection>
-
-           <FadeInSection>
-            <div className=" max-w-7xl mx-auto w-full grid grid-cols-6 px-2 animate-appear">
-              <div className="col-span-3 w-full h-full py-20">
-                <h1 className="font-bold">Aretha Esports (Valorant Player)</h1>
-                <p className="text-gray-100  text-32">
-                <ul className="list-disc list-inside">
-                  <li>Co-captain of the organization’s Valorant female team (role: main sentinel)</li>
-                  <li>Participates in scrimmages</li>
-                  <li>Assists team managers to find scrimmages</li>
-                  <li>Participated in FSL’s VCT-GC APAC Series Stage 1: Open 3</li>
-                  <li>Participated in a PUG Game of Aureole Esports</li>
-                  <li>Collaborated with the team captain for team reports and evaluation</li>
-                  <li>Monitored a small mental health project for the team to cope with pressure and stress</li>
-                  <li>Worked with both team and coach to organize the team’s schedule</li>
-                </ul>
-                </p>
-              </div>
-              {/* Vertical Line */}
-              <div className="relative w-full h-full flex justify-center items-center">
-                <div className="h-full w-2 bg-[#952D3C]"></div>
-                <div className="absolute w-45 px-2 h-15 rounded-full bg-[#952D3C] z-10 ">
-                  <h5 className="text-sm font-bold text-white text-center mt-5">
-                    April 2023 - May 2024
-                  </h5>
-                </div>
-              </div>
-              <div className="col-span-2 p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 place-items-center">
+              <div className="p-2 text-center">
                 <Image
                   aria-hidden
                   src="/Roblox.png"
-                  alt="Roblox"
-                  width={250}
-                  height={100}
+                  alt="Hive"
+                  width={200}
+                  height={200}
+                  className="p-3 transition-transform duration-300 hover:scale-110 mx-auto"
                 />
+                <h1 className="font-black text-center text-lg md:text-xl">HIVE COMMUNITY</h1>
+                <h1 className="font-semibold text-center text-lg md:text-xl text-[#da566a]">Manager</h1>
+                <h1 className="font-normal italic text-center text-sm md:text-l">(July 2025 - Present)</h1>
               </div>
-            </div>
-          </FadeInSection>
 
-
-            <FadeInSection>
-            <div className=" max-w-7xl mx-auto w-full grid grid-cols-6 px-2 animate-appear">
-              <div className="col-span-3 w-full h-full py-20">
-                <h1 className="font-bold">Haven (Manager)</h1>
-                <p className="text-gray-100  text-32">
-                <ul className="list-disc list-inside">
-                  <li>Co-captain of the organization’s Valorant female team (role: main sentinel)</li>
-                  <li>Participates in scrimmages</li>
-                  <li>Assists team managers to find scrimmages</li>
-                  <li>Participated in FSL’s VCT-GC APAC Series Stage 1: Open 3</li>
-                  <li>Participated in a PUG Game of Aureole Esports</li>
-                  <li>Collaborated with the team captain for team reports and evaluation</li>
-                  <li>Monitored a small mental health project for the team to cope with pressure and stress</li>
-                  <li>Worked with both team and coach to organize the team’s schedule</li>
-                </ul>
-                </p>
-              </div>
-              {/* Vertical Line */}
-              <div className="relative w-full h-full flex justify-center items-center">
-                <div className="h-full w-2 bg-[#952D3C]"></div>
-                <div className="absolute w-40 px-2 h-15 rounded-full bg-[#952D3C] z-10 ">
-                  <h5 className="text-sm font-bold text-white text-center mt-5">
-                    July 2025 - Present
-                  </h5>
-                </div>
-              </div>
-              <div className="col-span-2 p-4">
+              <div className="p-2 text-center">
                 <Image
                   aria-hidden
                   src="/haven.jpg"
-                  alt="Harbor Haven"
-                  width={250}
-                  height={100}
+                  alt="HAVEN"
+                  width={200}
+                  height={200}
+                  className="p-3 transition-transform duration-300 hover:scale-110 mx-auto"
                 />
+                <h1 className="font-black text-center text-lg md:text-xl">HAVEN</h1>
+                <h1 className="font-semibold text-center text-lg md:text-xl text-[#da566a]">Manager</h1>
+                <h1 className="font-normal italic text-center text-sm md:text-l">(July 2025 - Present)</h1>
               </div>
-            </div>
-          </FadeInSection>
 
-            <FadeInSection>
-            <div className=" max-w-7xl mx-auto w-full grid grid-cols-6 px-2 animate-appear">
-              <div className="col-span-3 w-full h-full py-20">
-                <h1 className="font-bold">Hive Community (Manager)</h1>
-                <p className="text-gray-100  text-32">
-                <ul className="list-disc list-inside">
-                  <li>Co-captain of the organization’s Valorant female team (role: main sentinel)</li>
-                  <li>Participates in scrimmages</li>
-                  <li>Assists team managers to find scrimmages</li>
-                  <li>Participated in FSL’s VCT-GC APAC Series Stage 1: Open 3</li>
-                  <li>Participated in a PUG Game of Aureole Esports</li>
-                  <li>Collaborated with the team captain for team reports and evaluation</li>
-                  <li>Monitored a small mental health project for the team to cope with pressure and stress</li>
-                  <li>Worked with both team and coach to organize the team’s schedule</li>
-                </ul>
-                </p>
-              </div>
-              {/* Vertical Line */}
-              <div className="relative w-full h-full flex justify-center items-center">
-                <div className="h-full w-2 bg-[#952D3C]"></div>
-                <div className="absolute w-40 px-2 h-15 rounded-full bg-[#952D3C] z-10 ">
-                  <h5 className="text-sm font-bold text-white text-center mt-5">
-                    July 2025 - Present
-                  </h5>
-                </div>
-              </div>
-              <div className="col-span-2 p-4">
+              <div className="p-2 text-center">
                 <Image
                   aria-hidden
                   src="/Roblox.png"
-                  alt="Roblox"
-                  width={250}
-                  height={100}
+                  alt="Aretha"
+                  width={200}
+                  height={200}
+                  className="p-3 transition-transform duration-300 hover:scale-110 mx-auto"
                 />
+                <h1 className="font-black text-center text-lg md:text-xl">ARETHA ESPORTS</h1>
+                <h1 className="font-semibold text-center text-lg md:text-xl text-[#da566a]">Valorant Player</h1>
+                <h1 className="font-normal italic text-center text-sm md:text-l">(April 2023 - May 2024)</h1>
+              </div>
+
+              {/* Center bottom row items by using col-span and flex */}
+              <div className="col-span-1 sm:col-span-2 lg:col-span-3 flex flex-col md:flex-row justify-center gap-4 md:gap-12 mt-4">
+                <div className="p-2 text-center">
+                  <Image
+                    aria-hidden
+                    src="/vpr_logo.png"
+                    alt="VPR"
+                    width={200}
+                    height={200}
+                    className="p-3 transition-transform duration-300 hover:scale-110 mx-auto"
+                  />
+                  <h1 className="font-black text-center text-lg md:text-xl">VPR</h1>
+                  <h1 className="font-semibold text-center text-lg md:text-xl text-[#da566a]">Valorant Player / Project Manager</h1>
+                  <h1 className="font-normal italic text-center text-sm md:text-l">(Nov 2022 - Jan 2023)</h1>
+                </div>
+
+                <div className="p-2 text-center">
+                  <Image
+                    aria-hidden
+                    src="/unreal.png"
+                    alt="Unreal"
+                    width={200}
+                    height={200}
+                    className="p-3 transition-transform duration-300 hover:scale-110 mx-auto"
+                  />
+                  <h1 className="font-black text-center text-lg md:text-xl">UNREAL ESPORTS</h1>
+                  <h1 className="font-semibold text-center text-lg md:text-xl text-[#da566a]">Team Manager</h1>
+                  <h1 className="font-normal italic text-center text-sm md:text-l">(March 2021 - Nov 2021)</h1>
+                </div>
               </div>
             </div>
           </FadeInSection>
-
-          
-        {/* Fade overlay (only when collapsed) */}
-        {!expanded && (
-          <div className="absolute bottom-[-1250px] left-0 w-full h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
-          
-        )}
-          </div>
-
-
-          
-      <FadeInSection>
-           {/* Toggle button */}
-      <div className="text-center mt-6">
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="px-4 py-2 bg-[#952D3C] text-white rounded-lg hover:bg-[#7a222f] transition"
-        >
-          {expanded ? "See Less" : "See More"}
-        </button>
-      </div>
-      </FadeInSection>
         </section>
 
-
-        <section className="h-full p-5 min-w-full mt-20">
+        {/* Valorant Stats Section */}
+        <section className="p-4 md:p-5 min-w-full mt-10 md:mt-20 mb-10">
           <FadeInSection>
-            <h2 className="scroll-m-20 text-center text-2xl font-extrabold text-balance mb-30  animate-appear">
+            <h2 className="scroll-m-20 text-center text-2xl md:text-3xl font-extrabold text-balance mb-10 md:mb-20 animate-appear">
               VALORANT STATS
             </h2>
           </FadeInSection>
 
-
-          <div className="grid grid-cols-2 grid-rows-3 gap-3 px-40">
-
-          <FadeInSection>
-            <div className="flex flex-col items-center">
-                <h1 className="text-xl font-normal">IGN</h1>
-                <span className="relative z-10 text-4xl font-black mb-4">Aether#1011</span>
-                 
-            </div>
-          </FadeInSection>
-
-
-          <FadeInSection>
-            <div className="flex flex-col items-center">
-                <h1 className="text-xl font-normal">MAIN ROLE</h1>
-                <span className="relative z-10 text-4xl font-black mb-4">SENTINEL</span>
-                   <Image
-                      aria-hidden
-                      src="/sentinel.webp"
-                      alt="Roblox"
-                      width={80}
-                      height={80}
-                    />
-            </div>
-          </FadeInSection>
-
-          <FadeInSection>
-            <div className="flex flex-col items-center">
-                <h1 className="text-xl font-normal">PEAK RATING</h1>
-                <span className="relative z-10 text-4xl font-black">ASCENDANT 2</span>
-                 <Image
-                      aria-hidden
-                      src="/ascendant1.png"
-                      alt="Roblox"
-                      width={90}
-                      height={90}
-                    />
-            </div>
-          </FadeInSection>
-
-
-          <FadeInSection>
-
-            <div className="flex flex-col items-center my-5">
-              <div className="relative mt-2 w-[500px]  flex justify-center items-center text-white  overflow-hidden">
-                {/* Content above */}
-                <span className="relative z-10 flex flex-col items-center">
-                  <h1 className="text-xl font-normal mb-2">AGENTS</h1>
-
-                  <div className="flex gap-4">
-                    <Image
-                      aria-hidden
-                      src="/Sage_icon.png"
-                      alt="Roblox"
-                      width={100}
-                      height={100}
-                    />
-                    <Image
-                      aria-hidden
-                      src="/Viper_icon.png"
-                      alt="Roblox"
-                      width={100}
-                      height={100}
-                    />
-                    <Image
-                      aria-hidden
-                      src="/Omen_icon.png"
-                      alt="Roblox"
-                      width={100}
-                      height={100}
-                    />
-                      <Image
-                      aria-hidden
-                      src="/Cypher_icon.png"
-                      alt="Roblox"
-                      width={100}
-                      height={100}
-                    />
-                  </div>
-                </span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-12 grid-rows-4 md:grid-rows-2 px-4 md:px-40">
+            <FadeInSection>
+              <div className="flex flex-col items-center">
+                <h1 className="text-lg md:text-xl font-normal">IGN</h1>
+                <span className="relative z-10 text-2xl md:text-4xl font-black mb-2 md:mb-4">Aether#1011</span>
               </div>
-            </div>
-                      </FadeInSection>
+            </FadeInSection>
 
+            <FadeInSection>
+              <div className="flex flex-col items-center">
+                <h1 className="text-lg md:text-xl font-normal">MAIN ROLE</h1>
+                <span className="relative z-10 text-2xl md:text-4xl font-black mb-2 md:mb-4">SENTINEL</span>
+                <Image
+                  aria-hidden
+                  src="/sentinel.webp"
+                  alt="Sentinel"
+                  width={60}
+                  height={60}
+                  className="w-12 h-12 md:w-16 md:h-16"
+                />
+              </div>
+            </FadeInSection>
+
+            <FadeInSection>
+              <div className="flex flex-col items-center">
+                <h1 className="text-lg md:text-xl font-normal">PEAK RATING</h1>
+                <span className="relative z-10 text-2xl md:text-4xl font-black">ASCENDANT 2</span>
+                <Image
+                  aria-hidden
+                  src="/ascendant1.png"
+                  alt="Ascendant Rank"
+                  width={70}
+                  height={70}
+                  className="w-14 h-14 md:w-20 md:h-20"
+                />
+              </div>
+            </FadeInSection>
+
+            <FadeInSection>
+              <div className="flex flex-col items-center">
+                <div className="relative mt-2 w-full max-w-xs md:w-[500px] flex justify-center items-center text-white overflow-hidden">
+                  <span className="relative z-10 flex flex-col items-center">
+                    <h1 className="text-lg md:text-xl font-normal mb-2">AGENTS</h1>
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+                      <Image
+                        aria-hidden
+                        src="/Sage_icon.png"
+                        alt="Sage"
+                        width={70}
+                        height={70}
+                        className="w-12 h-12 md:w-16 md:h-16"
+                      />
+                      <Image
+                        aria-hidden
+                        src="/Viper_icon.png"
+                        alt="Viper"
+                        width={70}
+                        height={70}
+                        className="w-12 h-12 md:w-16 md:h-16"
+                      />
+                      <Image
+                        aria-hidden
+                        src="/Omen_icon.png"
+                        alt="Omen"
+                        width={70}
+                        height={70}
+                        className="w-12 h-12 md:w-16 md:h-16"
+                      />
+                      <Image
+                        aria-hidden
+                        src="/Cypher_icon.png"
+                        alt="Cypher"
+                        width={70}
+                        height={70}
+                        className="w-12 h-12 md:w-16 md:h-16"
+                      />
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </FadeInSection>
           </div>
-
-
         </section>
 
-        <section className="w-full flex flex-col items-center">
+        {/* Contact Section */}
+        <section className="w-full flex flex-col items-center px-4">
           <FadeInSection>
-            <h2 className="scroll-m-20 text-center text-2xl font-extrabold text-balance animate-appear">
+            <h2 className="scroll-m-20 text-center text-xl md:text-2xl font-extrabold text-balance animate-appear">
               Want to play with me or contact me?
             </h2>
-            <h2 className="scroll-m-20 text-center text-2xl font-extrabold text-balance animate-appear">
+            <h2 className="scroll-m-20 text-center text-xl md:text-2xl font-extrabold text-balance animate-appear">
               Click the button below!
             </h2>
           </FadeInSection>
@@ -519,7 +377,7 @@ export default function Home() {
           <FadeInSection>
             <Button
               variant="default"
-              className="w-fit mt-10 ml-2 bg-[#C53448]/70 hover:bg-[#C53448]/40 hover:cursor-pointer"
+              className="w-full max-w-xs md:w-fit mt-6 md:mt-10 bg-[#C53448]/70 hover:bg-[#C53448]/40 hover:cursor-pointer"
             >
               Send me a Message!
             </Button>
